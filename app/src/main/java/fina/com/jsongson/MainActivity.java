@@ -40,9 +40,9 @@ public class MainActivity extends AppCompatActivity {
         //gson解析json
         Studnt result2gson = gson.fromJson(result, Studnt.class);
         Log.d("TAG1", result2gson.nickName);
+        //gson解析单位中的hashmap元素内容
         HashMap<String, String> studnthashMap = gson.fromJson(gson.toJson(result2gson.booksMap), new TypeToken<HashMap<String, String>>() {
         }.getType());
-        Log.d("???", gson.toJson(result2gson.booksMap));
         for (HashMap.Entry<String, String> a : studnthashMap.entrySet()) {
             Log.d("TAG2", a.getKey() + " " + a.getValue());
         }
